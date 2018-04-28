@@ -6,12 +6,24 @@
 	{{content}}
 	{{> share}} 
   	
-  	{{#prev_post}}
+  	<!-- {{#prev_post}}
 		<a href="{{url}}">{{title}}</a>
 	{{/prev_post}}
 
 	{{#next_post}}
 		<a href="{{url}}">{{title}}</a>
-	{{/next_post}}
-</article>  
+	{{/next_post}} !-->
+
+</article> 
+
+{{#contentFor "head"}}
+	<link rel="stylesheet" type="text/css" href="{{asset '/styles/prism.css'}}"/>
+	<link rel="stylesheet" type="text/css" href="{{asset '/styles/prism-toolbar.css'}}"/>
+	<link rel="stylesheet" type="text/css" href="{{asset '/styles/rrssb.css'}}">
+{{/contentFor}}
+
+<script type="text/javascript" src= "{{asset '/js/prism.js'}}"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-swift.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-xml.min.js"></script>
+
 {{/post}}
