@@ -1,8 +1,8 @@
 {{#foreach posts}}
-<section id="{{id}}" class="{{post_class}}">
+<section id="{{id}}" class="{{post_class}} post-list">
 	<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
 	<h3 class="post-title">{{date published_at format='D MMMM YYYY'}} <span class="separator"> &middot; </span> {{reading_time}} <span class="taglist">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</h3>
 	<p>{{excerpt words="50"}}...</p>
-	<p><a href="{{url}}">Read On →</a></p>
+	<p class="read-on"><a href="{{url}}">Read On →</a></p>
 </section>
 {{/foreach}}

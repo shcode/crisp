@@ -1,8 +1,10 @@
 {
-    "name"        : "Crisp-gaelfoppolo",
+    "name"        : "crisp-gaelfoppolo",
     "version"     : "0.5.1",
     "description" : "A minimalist, responsive, and open-source theme for Ghost",
-    "author"      : "Kathy Qian",
+    "author": {
+        "email": "me@gaelfoppolo.com"
+    },
     "homepage"    : "https://github.com/kathyqian/crisp-ghost-theme",
 	"license"     : "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
 	"config": {
