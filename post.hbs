@@ -1,5 +1,6 @@
 {{!< default}}
 {{#post}}
+
 <article id="{{id}}" class="{{post_class}}">
 	<div class="post-stamp">{{date published_at format='D MMMM YYYY'}}<span class="taglist">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</div>
 	<h1 class="post-title">{{title}}</h1>
@@ -14,7 +15,11 @@
 		<a href="{{url}}">{{title}}</a>
 	{{/next_post}} !-->
 
-</article> 
+</article>
+
+{{/post}}
+
+{{> floating-header}}
 
 {{#contentFor "head"}}
 	<link rel="stylesheet" type="text/css" href="{{asset '/styles/prism.css'}}"/>
@@ -22,8 +27,57 @@
 	<link rel="stylesheet" type="text/css" href="{{asset '/styles/rrssb.css'}}">
 {{/contentFor}}
 
+{{#contentFor "scripts"}}
+<script>
+
+$(document).ready(function () {
+
+    var progressBar = document.querySelector('progress');
+    var title = document.querySelector('.post-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+{{/contentFor}}
+
 <script type="text/javascript" src= "{{asset '/js/prism.js'}}"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-swift.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-xml.min.js"></script>
-
-{{/post}}

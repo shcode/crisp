@@ -17,17 +17,18 @@ html {
 	height: 100%;
 }
 body {
-	padding: 2em 2.5em 1em 20em;
+	padding: 2em 6em 1em 24em;
 }                  
 /* Blocks */
 header {
 	border-right: 1px #eee solid;
 	padding: 2em;
+	padding-bottom: 1em;
 	position:fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	width:13.5em;
+	width: 13.5em;
 	color: #fff;
 	background: rgb(40, 40, 34);
 	display: flex; 
@@ -35,11 +36,12 @@ header {
 	flex-direction: column;
 }
 #content {
-	display: block;
 	width: 100%;
+	display: flex; 
+	flex-direction: column;
+	justify-content: center;
 }
 footer {
-	padding: 1em 0em 2.5em 0em;
 	font-size:0.8em;
 	line-height: 1.5em;
 	color: #888;
@@ -191,15 +193,16 @@ article span.post-stamp {
 }
 section.post-list {
 	border-bottom: 1px solid #eee;
+	margin-bottom: 1em;
 }
-h1.post-title {
-	margin-top:0.35em;
-	margin-bottom: 0.6em;
+.post-title {
+	margin: 0;
 }
-h3.post-title {
-	margin-top:0.4em;
-	padding-bottom:0.9em;
-	font-size: 1.2em;
+.post-subtitle {
+	margin-top: 0.5em;
+	padding-bottom: 0.9em;
+	font-size: 0.9em;
+	font-weight: 400;
 	color: #444;
 }
 .post-title .feature-star {
@@ -248,6 +251,48 @@ h3.post-title {
 #social-items-list {
 	flex-direction: row;
 }
+.progress {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    height: 3px;
+    border: none;
+    color: green;
+    background: transparent;
+}
+
+.progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+.progress::-webkit-progress-value {
+    background-color: green;
+}
+
+.progress::-moz-progress-bar {
+    background-color: green;
+}
+
+.progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+}
+
+.progress-bar {
+    display: block;
+    width: 50%;
+    height: inherit;
+    background-color: green;
+}
 #comments {
 	margin-top: 0.15em;
 	padding-bottom: 0.2em;
@@ -255,7 +300,10 @@ h3.post-title {
 }
 /* Footer */
 .pagination {
-	margin-bottom:1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 1em;
 }
 footer a {
 	font-weight:300;
