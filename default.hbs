@@ -26,13 +26,12 @@
 	<body class="{{body_class}}">
 		<header id="header">
 			{{#if @blog.logo}}<a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-			<h1 class="title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+			<h1 class="title">{{@blog.title}}</h1>
 			<p class="description">{{@blog.description}}</p>
-			<hr>
 			{{navigation}}
 			{{> follow}}
 			<div class="footer">
-				<p class="small-print">&copy; {{date format='YYYY'}} {{@blog.title}}. All rights reserved. <br/>
+				<p class="small-print">&copy; {{date format='YYYY'}}. All rights reserved. <br/>
 				<a href="#">Privacy and Cookies</a>
 				</p>
 			</div>

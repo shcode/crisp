@@ -26,12 +26,12 @@ header {
 	position:fixed;
 	top: 0;
 	left: 0;
-	height:100%;
+	bottom: 0;
 	width:13.5em;
 	color: #fff;
-	background: #5cc265;
+	background: rgb(40, 40, 34);
 	display: flex; 
-	justify-content: center;
+	justify-content: flex-end;
 	flex-direction: column;
 }
 #content {
@@ -54,7 +54,7 @@ p, hr, h4, h5, h6 {
 }
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 700 !important;
+	font-weight: 700;
 }
 h1 {
 	font-size: 2.5em;
@@ -90,7 +90,7 @@ img, iframe {
 a {
 	font-weight:700;
 	text-decoration:none;
-	color: #5cc265; /* Change Link Color */
+	color: rgb(40, 40, 34); /* Change Link Color */
 }
 a:hover {
 	text-decoration:none;
@@ -141,11 +141,12 @@ input {
 
 /* Sidebar */
 header h1.title {
-	font-size: 2.5em;
-	margin-top: 0.8em;
+	font-size: 2em;
+	font-weight: 500;
 	margin-bottom: 0em;
 }
 header .description {
+	margin-top: 0.2em;
 	margin-bottom: 0.8em;
 }
 header a {
@@ -279,7 +280,7 @@ footer a:hover {
 	header {
 		border-right: none;
 		border-bottom: 1px #eee solid;
-		position:relat ive;
+		position:relative;
 		height:auto;
 		width:auto;
 		text-align:center;
