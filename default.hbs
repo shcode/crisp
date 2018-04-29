@@ -20,18 +20,17 @@
 				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 			<![endif]-->
-			{{{block "head"}}}
+		{{{block "head"}}}
 	    {{ghost_head}}
 	</head>
 	<body class="{{body_class}}">
 		<header id="header">
-			{{#if @blog.logo}}<a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
 			<h1 class="title">{{@blog.title}}</h1>
 			<p class="description">{{@blog.description}}</p>
 			{{navigation}}
 			{{> follow}}
 			<div class="footer">
-				<p class="small-print">&copy; {{date format='YYYY'}}. All rights reserved. <br/>
+				<p class="small-print">&copy; {{date format='YYYY'}} Gaël Foppolo. All rights reserved. <br/>
 				<a href="#">Privacy and Cookies</a>
 				</p>
 			</div>
@@ -40,7 +39,7 @@
 			{{{body}}}
 		</main>
 		<footer id="footer">
-			<section id="footer-message">&copy; {{date format='YYYY'}} {{@blog.title}}. All rights reserved.</section>
+			<section id="footer-message">&copy; {{date format='YYYY'}} Gaël Foppolo. All rights reserved.</section>
 		</footer>
 	{{ghost_foot}}
 	<script
