@@ -1,238 +1,259 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900');
+/* Table of Contents
+/* ------------------------------------------------------------
 
-* {
-	padding: 0;
-	margin: 0;
-} 
-/* Basic Typography */
+This is a development CSS file which is built to a minified
+production stylesheet in assets/built/screen.css
+
+1.  Global Styles
+2.  Layout
+3.  Special Templates
+4.  Site Header
+5.  Site Navigation
+6.  Post Feed
+7.  Single Post
+  7.1. Subscribe Form
+  7.2. Post Footer
+     7.2.1 Single Author Byline
+     7.2.2 Multiple Author Byline
+  7.3. Comments
+  7.4. Related Posts
+  7.5. Floating Header
+8.  Author Template
+9.  Error Template
+10. Subscribe Overlay
+11. Site Footer
+
+*/
+
+
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+@import "global.css";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700');
+
 html, body {
-	font-size: 1em;
-	line-height: 1.65em;
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 400;
-    background: #fff;
-	color: #444;
+	color: var(--darkgrey);
+	font-family: "Source Sans Pro", -apple-system, "Open Sans", "Helvetica Neue", sans-serif;
 }
-html {
-	height: 100%;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--darkgrey);
 }
-body {
-	padding: 2em 6em 1em 24em;
-}                  
-/* Blocks */
+
+a {
+    color: var(--darkgrey);
+}
+
+a:hover {
+    color: var(--grey);
+}
+
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
 header {
-	border-right: 1px #eee solid;
-	padding: 2em;
-	padding-bottom: 1em;
-	position:fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 13.5em;
-	color: #fff;
-	background: rgb(40, 40, 34);
 	display: flex; 
-	justify-content: flex-end;
-	flex-direction: column;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 2em;
+    padding-bottom: 1em;
 }
-#content {
+
+main {
 	width: 100%;
 	display: flex; 
 	flex-direction: column;
 	justify-content: center;
 }
+
 footer {
-	font-size:0.8em;
 	line-height: 1.5em;
-	color: #888;
-}
-article {
-	border-bottom: 0.1em #eee solid;
-	max-width: 56em;
-}
-p, hr, h4, h5, h6 {
-	margin-top: 0.9em;
-	margin-bottom: 0.9em;
-}
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
-}
-h1 {
-	font-size: 2.5em;
-	line-height: 1.1em;
-	margin-top: 0.6em;
-	margin-bottom: 0.6em;
-}
-h2 {
-	font-size:1.9em;
-	line-height: 1.2em;
-	margin-top: 0.7em;
-	margin-bottom: 0.7em;	
-}
-h3 {
-	font-size:1.4em;
-	line-height: 1.3em;
-	margin-top: 0.8em;
-	margin-bottom: 0.8em;	
-}
-h4 {
-	font-size:1.3em;
-}
-h5 {
-	font-size:1.2em;
-}
-h6 {
-	font-size:1.1em;
-}
-/* Page Elements */
-img, iframe {
-	max-width: 100%;
-}
-a {
-	font-weight:700;
-	text-decoration:none;
-	color: rgb(40, 40, 34); /* Change Link Color */
-}
-a:hover {
-	text-decoration:none;
-	color: #555;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	font-weight: 600 !important;
-}
-strong {
-	font-weight: 900;
-}
-blockquote {
-	border-left: 0.4em solid #eee;
-	padding-left: 1.2em;
-	font-size: 1.3em;
-}
-hr{
- 	border: 0;
-	height: 1px;
-	background: #eee;
-}
-ul, ol {
-	margin-left: 3em; 
-}
-code {
-	font-size: 0.9em;
-	background: #eeee;
-}
-pre {
-	font-size: 0.8em;
-	line-height: 2em;
-	background: #eee;
-	padding: 1em;
-	word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre;
-	white-space: -moz-pre-wrap;
-	white-space: pre-wrap;
-	white-space: pre\9; 
-}
-input {
-	font-size:1em;
-	padding: 0.3em;
-}
-.small-print {
-	font-size:.6em;
+	padding-top: 1em;
 }
 
-/* Sidebar */
+/* 3. Special Template Styles
+/* ---------------------------------------------------------- */
+
+/* Large Screens */
+@media only screen and (min-width: 1281px) {
+	html, body {
+		font-size: 1.1em;
+	} 
+}
+/* Small Screens */
+@media only screen and (max-width: 800px) { 
+	body {
+		padding:0;
+	}
+	header {
+		border-right: none;
+		border-bottom: 1px #eee solid;
+		position:relative;
+		height:auto;
+		width:auto;
+		text-align:center;
+		padding-bottom:1em;
+	}
+	main {
+		margin-left: 0;
+		padding: 2em 2em 1em 2em;
+		width: auto;
+	}
+	footer {
+		padding: 1em 2.5em 2em 2.5em;
+	}
+}
+/* Tiny Screens */
+@media only screen and (max-width: 320px) { 
+	header {
+		padding: 1.2em 1.2em 0.6em 1.2em;
+	}
+	main {
+		padding: 1.2em 1.2em 0.6em 1.2em;
+	}
+	footer {
+		padding: 0 1.5em 1.2em 1.5em;
+	}
+	ul, ol {
+		margin-left: 2em; 
+	}
+}
+
+/* 4. Site Header
+/* ---------------------------------------------------------- */
+
+header {
+    background: var(--darkgrey);
+}
+
+header * {
+	color: white;
+}
+
 header h1.title {
 	font-size: 2em;
 	font-weight: 500;
 	margin-bottom: 0em;
 }
+
 header .description {
 	margin-top: 0.2em;
 	margin-bottom: 0.8em;
-}
-header a {
-	color:#fff;
 }  
+
 header a:hover {
-	color: #ccc;
-	text-decoration:none;
-}
-header #logo img {
-	width:9em;
-	height:9em;
-	border-radius:4.5em;
-	-moz-border-radius: 4.5em;
-	-webkit-border-radius: 4.5em;
-	border: none;
-}
-#follow-icons {
-	font-size: 0.7em;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}	
-#follow-icons span {
-	vertical-align:top;
-	margin-left:0.15em;
-	margin-right:0.15em;
-}
-#follow-icons span .fa-stack-1x {
-	font-size:1.05em;
-	line-height:1.9em;
-}
-header h6 {
-	margin-top:0.5em;
-}
-header .footer {
-	line-height: 1em;
+	color: var(--lightgrey);
 }
 
-/* Posts */
-article span.post-stamp {
-	color:#888;     
-}
-section.post-list {
-	border-bottom: 1px solid #eee;
+header .navigation {
+	display: flex; 
+    flex-direction: column;
+    align-self: center;
+	margin-top: 1em;
 	margin-bottom: 1em;
 }
+
+header .navigation h4 {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+#follow-icons {
+	display: flex; 
+    flex-direction: row;
+    align-self: center;
+	font-size: 0.6em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#follow-icons a {
+	vertical-align: top;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+header h6 {
+	margin-top: 0.5em;
+}
+
+header .footer {
+	line-height: 1.1em;
+}
+
+header .small-print {
+	font-size: 0.7em;
+}
+
+/* 5. Site Navigation
+/* ---------------------------------------------------------- */
+
+/* 6. Post Feed
+/* ---------------------------------------------------------- */
+
+section.post-list:not(:last-child) {
+	border-bottom: 1px solid var(--lightgrey);
+	margin-bottom: 1em;
+}
+
 .post-title {
 	margin: 0;
 }
+
 .post-subtitle {
 	margin-top: 0.5em;
 	padding-bottom: 0.9em;
 	font-size: 0.9em;
 	font-weight: 400;
-	color: #444;
 }
+
 .post-title .feature-star {
 	font-size: 0.9em;
 }
+
 .separator, .taglist, .feature-star {
-	color: #ccc;
+	color: var(--darkgrey);
 }
+
 .taglist a {
-	background-color:#444;
-	color:#fff;
+	background-color: var(--darkgrey);
+	color: white;
 	display: inline-block;   
 	line-height: 1.5em;
-	padding:0.3em 0.6em 0.3em 0.6em;
-	vertical-align:20%;  
-	font-size:0.6em;
-	font-weight: 700 !important;
-	text-transform:uppercase;
-	letter-spacing:0.05em;
-	border-radius:0.3em;
+	padding: 0.3em 0.6em 0.3em 0.6em;
+	vertical-align: 20%;  
+	font-size: 0.6em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	border-radius: 0.3em;
 	-moz-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
 }
+
 .taglist a:hover {
-	background-color:#555;
+	background-color: var(--grey);
 }
+
 .read-on {
 	display: flex; 
 	justify-content: flex-end;
 }
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 7.2. Post Footer
+/* ---------------------------------------------------------- */
+
 #social-bar, #social-items-list {
 	display: flex;
 	justify-content: center;
@@ -254,6 +275,30 @@ section.post-list {
 #social-items-list {
 	flex-direction: row;
 }
+
+/* 7.2.1 Single Author Byline
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 7.2.2 Multiple Author Byline
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 7.3. Comments
+/* ---------------------------------------------------------- */
+
+/* none */
+
+/* 7.4. Related posts
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 7.5. Floating Footer
+/* ---------------------------------------------------------- */
+
 .progress {
     position: fixed;
     bottom: 0;
@@ -264,7 +309,7 @@ section.post-list {
     width: 100%;
     height: 3px;
     border: none;
-    color: green;
+    color: var(--blue);
     background: transparent;
 }
 
@@ -273,11 +318,11 @@ section.post-list {
 }
 
 .progress::-webkit-progress-value {
-    background-color: green;
+    background-color: var(--blue);
 }
 
 .progress::-moz-progress-bar {
-    background-color: green;
+    background-color: var(--blue);
 }
 
 .progress-container {
@@ -294,70 +339,29 @@ section.post-list {
     display: block;
     width: 50%;
     height: inherit;
-    background-color: green;
+    background-color: var(--blue);
 }
-#comments {
-	margin-top: 0.15em;
-	padding-bottom: 0.2em;
-	border-bottom: 1px solid #eee;
-}
-/* Footer */
-.pagination {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom: 1em;
-}
-footer a {
-	font-weight:300;
-	color:#888;
-	text-decoration: underline;
-} 
-footer a:hover {
-	color:#444;
-	text-decoration: none;
-}
-/* Large Screens */
-@media only screen and (min-width: 1281px) {
-	html, body {
-		font-size: 1.1em;
-	} 
-}
-/* Small Screens */
-@media only screen and (max-width: 800px) { 
-	body {
-		padding:0;
-	}
-	header {
-		border-right: none;
-		border-bottom: 1px #eee solid;
-		position:relative;
-		height:auto;
-		width:auto;
-		text-align:center;
-		padding-bottom:1em;
-	}
-	#content {
-		margin-left: 0;
-		padding: 2em 2em 1em 2em;
-		width: auto;
-	}
-	footer {
-		padding: 0 2.5em 2em 2.5em;
-	}
-}
-/* Tiny Screens */
-@media only screen and (max-width: 320px) { 
-	header {
-		padding: 1.2em 1.2em 0.6em 1.2em;
-	}
-	#content {
-		padding: 1.2em 1.2em 0.6em 1.2em;
-	}
-	footer {
-		padding: 0 1.5em 1.2em 1.5em;
-	}
-	ul, ol {
-		margin-left: 2em; 
-	}
+
+/* 8. Author Template
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 9. Error Template
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 10. Subscribe Overlay
+/* ---------------------------------------------------------- */
+
+/*todo*/
+
+/* 11. Site Footer
+/* ---------------------------------------------------------- */
+
+footer {
+	font-size: 0.8em;
+	color: var(--grey);
+	border-top: 1px solid var(--whitegrey);
 }
