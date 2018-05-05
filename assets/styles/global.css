@@ -189,7 +189,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family: monospace, monospace !important;
     font-size: 1em;
 }
 button,
@@ -299,11 +299,11 @@ html, body {
 
 body {
     padding-left: var(--headerWidth);
+    padding-top: 1em;
     padding-bottom: 1em;
 }
 
 main {
-    padding-top: var(--paddingContent);
     padding-left:  var(--paddingContent);
     padding-right: var(--paddingContent);
 }
@@ -541,6 +541,7 @@ pre {
     white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     white-space: pre\9; 
+    border-radius: 0.5em;
 }
 
 input {
