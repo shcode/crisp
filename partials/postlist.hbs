@@ -1,7 +1,7 @@
 {{#foreach posts}}
 <section id="{{id}}" class="{{post_class}} post-list">
-	<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-	<h3 class="post-subtitle">{{date published_at format='D MMMM YYYY'}} <span class="separator"> &middot; </span> {{reading_time}} <span class="taglist">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</h3>
+	<h1 class="post-title"><a href="{{url}}">{{title}}</a></h1>
+	<h2 class="post-subtitle">{{date published_at format='D MMMM YYYY'}} <span class="separator"> &middot; </span> {{reading_time}} <span class="taglist">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</h2>
 	<p>{{excerpt words="50"}}...</p>
 	<p class="read-on"><a href="{{url}}">Read On →</a></p>
 </section>

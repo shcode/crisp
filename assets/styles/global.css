@@ -16,7 +16,7 @@
     --brown: #a3821a;
 
     --headerWidth: 18em;
-    --paddingContent: 5vw;
+    --paddingContent: 6em;
 }
 
 /* Reset
@@ -153,7 +153,6 @@ a:hover {
 b,
 strong {
     font-weight: bold;
-    font-weight: 900;
 }
 i,
 em,
@@ -292,20 +291,20 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
-    line-height: 1.65em;
+    line-height: 1.5em;
     letter-spacing: 0;
     background: white;
 }
 
 body {
     padding-left: var(--headerWidth);
-    padding-top: 1em;
-    padding-bottom: 1em;
 }
 
 main {
-    padding-left:  var(--paddingContent);
+    padding-left : var(--paddingContent);
     padding-right: var(--paddingContent);
+    padding-top: calc(var(--paddingContent) * 0.25);
+    padding-bottom : calc(var(--paddingContent) * 0.25);
 }
 
 ::selection {
@@ -347,6 +346,12 @@ iframe,
 img,
 svg,
 video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 80vh;
     vertical-align: middle;
 }
 
@@ -392,13 +397,11 @@ ol {
 ul,
 ol {
     max-width: 100%;
-    margin-left: 3em; 
+    margin-left: 2em; 
 }
 
-li {
+li > p {
     margin: 0.5em 0;
-    padding-left: 0.3em;
-    line-height: 1.6em;
 }
 
 dt {
@@ -417,8 +420,9 @@ dd {
 
 blockquote {
     margin: 1.5em 0;
-    border-left: var(--darkgrey) 0.4em solid;
+    border-left: var(--grey) 0.25em solid;
     padding-left: 1.2em;
+    color: var(--grey);
 }
 
 blockquote p {
@@ -461,7 +465,8 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    line-height: 1.15em;
+    margin-bottom: .5rem;
+    line-height: 1.25em;
     font-weight: 700;
     text-rendering: optimizeLegibility;
 }
@@ -476,64 +481,38 @@ h6 a {
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
+    margin-top: 2rem;
+    font-size: 2rem;
 }
-@media (max-width: 500px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-}
-
 h2 {
-    font-size: 1.9em;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;   
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
 }
-@media (max-width: 500px) {
-    h2 {
-        font-size: 1.8rem;
-    }
-}
-
 h3 {
-    font-size: 1.4em;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;   
-}
-@media (max-width: 500px) {
-    h3 {
-        font-size: 1.7rem;
-    }
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
 }
 
-h4 {
-    font-size: 1.3em;
+h4, h5, h6 {
+    margin-top: 1rem;
+    font-size: 1rem;
 }
 
-h5 {
-    font-size: 1.2em;
-}
-
-h6 {
-    font-size: 1.1em;
-}
-
-p, h4, h5, h6 {
+p {
     margin-top: 0.9em;
     margin-bottom: 0.9em;
 }
 
 code {
     font-size: 0.9em;
-    background: #eeee;
+    background: var(--lightgrey);
+    color: var(--darkgrey);
 }
 
 pre {
     font-size: 0.8em;
     line-height: 2em;
-    background: #eee;
+    background: #f9f9f9 !important;
     padding: 1em;
     word-break: break-all;
     word-wrap: break-word;
