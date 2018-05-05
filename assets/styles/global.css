@@ -14,6 +14,9 @@
     --red: #f05230;
     --pink: #fa3a57;
     --brown: #a3821a;
+
+    --headerWidth: 18em;
+    --paddingContent: 5vw;
 }
 
 /* Reset
@@ -295,7 +298,14 @@ html, body {
 }
 
 body {
-    padding: 2em 6em 1em 24em;
+    padding-left: var(--headerWidth);
+    padding-bottom: 1em;
+}
+
+main {
+    padding-top: var(--paddingContent);
+    padding-left:  var(--paddingContent);
+    padding-right: var(--paddingContent);
 }
 
 ::selection {
@@ -323,6 +333,12 @@ header {
     top: 0;
     left: 0;
     bottom: 0;
+    width: var(--headerWidth);
+}
+
+footer {
+    padding-left:  var(--paddingContent);
+    padding-right: var(--paddingContent);
 }
 
 audio,
