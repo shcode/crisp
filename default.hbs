@@ -22,11 +22,14 @@
 				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 			<![endif]-->
+
+		{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 		{{{block "head"}}}
 
 		{{!-- This tag outputs SEO meta+structured data and other important settings --}}
 	    {{ghost_head}}
 	</head>
+	
 	<body class="{{body_class}}">
 		<header id="header">
 			<h1 class="title">{{@blog.title}}</h1>
@@ -45,13 +48,8 @@
 		<footer id="footer">
 			<section id="footer-message">&copy; {{date format='YYYY'}} Gaël Foppolo. All rights reserved.</section>
 		</footer>
-	{{ghost_foot}}
 	
-	<script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
+	{{ghost_foot}}
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
