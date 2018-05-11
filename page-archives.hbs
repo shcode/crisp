@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{#post}}
+
+	<div class="header">
+        <h1 class="post-title">{{title}}</h1>
+        <h2 class="post-subtitle">{{content}}</h2>
+    </div>
+
+	<div>
+	    {{#get "posts" limit="all"}}
+	        {{#foreach posts}}
+	            <span>
+	                {{date published_at format="DD/MM/YYYY"}} <span class="separator"> &middot; </span>  
+	                <a href="{{url}}">{{title}}</a>
+	            </span>
+	            <br>
+	        {{/foreach}}
+	    {{/get}}
+
+	</div>
+
+	{{#get "tags" limit="all" include="count.posts"}}
+		<div class="tags taglist smallTag">{{tags separator=" "}}</div>
+	{{/get}}
+
+{{/post}}

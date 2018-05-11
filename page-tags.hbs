@@ -7,15 +7,15 @@
         <h2 class="post-subtitle">{{content}}</h2>
     </div>
 
-	<div id="tagsList">
+	<div>
 
     	{{#get "tags" limit="all" include="count.posts"}}
-        
-        	<div class="taglist">{{tags separator=" "}}</div>
 
-	        <!--{{#foreach tags}}
+	        <div class="tags taglist">{{tags separator=" "}}</div>
+        
+	        {{#foreach tags}}
 	        	
-	        	<div class="taglist"><a href="{{url}}">{{name}}</a></div>
+	        	<div class="tags smallTag"><a href="{{url}}">{{name}}</a></div>
 	           
 	        	{{#get "posts" filter="tag:{{slug}}"}}
 
@@ -29,7 +29,8 @@
 			    
 			    {{/get}}
 
-	        {{/foreach}}-->
+	        {{/foreach}}
+
 
     	{{/get}}
 	</div>

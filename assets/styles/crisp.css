@@ -89,11 +89,11 @@ main {
 	header {
 		border-right: none;
 		border-bottom: 1px #eee solid;
-		position:relative;
-		height:auto;
-		width:auto;
-		text-align:center;
-		padding-bottom:1em;
+		position: relative;
+		height: auto;
+		width: auto;
+		text-align: center;
+		padding-bottom: 1em;
 	}
 	main {
 		margin-left: 0;
@@ -220,18 +220,16 @@ section.post-list:not(:last-child) {
 	font-size: 0.9em;
 }
 
-.separator, .taglist, .feature-star {
+.separator, .tags, .feature-star {
 	color: var(--darkgrey);
 }
 
-.taglist a {
+.tags * {
 	background-color: var(--darkgrey);
 	color: white;
-	display: inline-block;   
 	line-height: 1.5em;
 	padding: 0.3em 0.6em 0.3em 0.6em;
 	vertical-align: 20%;  
-	font-size: 0.6em;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
@@ -240,8 +238,17 @@ section.post-list:not(:last-child) {
 	-webkit-border-radius: 0.3em;
 }
 
-.taglist a:hover {
+.tags a:hover {
 	background-color: var(--grey);
+	color: white;
+}
+
+.taglist {
+	display: inline-block;   
+}
+
+.smallTag {
+	font-size: 0.6em;
 }
 
 .read-on {
@@ -274,7 +281,7 @@ article.post > .header {}
 	background-color: #eee;
 	font-size: 90%;
 	font-weight: 500;
-	border-radius: 6px;
+	border-radius: 0.3em;
 	flex-direction: column;
 }
 #social-bar > * {
@@ -285,6 +292,20 @@ article.post > .header {}
 }
 #social-items-list {
 	flex-direction: row;
+}
+
+article.post .bottom-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+article.post .bottom-navigation a {
+	border-radius: 0.3em;
+	padding: 0.3em;
+    border: 2px solid var(--darkgrey);
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 
 /* 7.2.1 Single Author Byline
@@ -361,7 +382,18 @@ article.post > .header {}
 /* 8. Tag Template
 /* ---------------------------------------------------------- */
 
-.page-tags .taglist {
+.page-tags .tags:not(:first-child) {
+	margin-top: 1em;
+}
+
+.tag-template .tags {
+	margin-top: 0.5em;
+}
+
+/* 8. Archive Template
+/* ---------------------------------------------------------- */
+
+.page-archives .tags {
 	margin-top: 1em;
 }
 

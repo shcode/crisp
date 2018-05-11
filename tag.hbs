@@ -1,4 +1,22 @@
 {{!< default}}
-<h1 class="post-title">{{tag.name}}</h1> 
-{{> postlist}}
+
+{{#tag}}
+	<div class="header">
+        <h1 class="post-title tags"><span>{{name}}</span></h1>
+        <h2 class="post-subtitle">{{description}}</h2>
+    </div>
+{{/tag}}
+
+<div>
+{{#foreach posts}}
+    <span>
+	{{date published_at format="DD/MM/YYYY"}} <span class="separator"> &middot; </span>  
+	<a href="{{url}}">{{title}}</a>
+	</span>
+	<br>
+{{/foreach}}
+</div>
+
+<!-- {{> postlist}} -->
+
 {{pagination}}

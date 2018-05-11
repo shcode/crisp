@@ -5,7 +5,7 @@
 
     <div class="header">
         <h1 class="post-title">{{title}}</h1>
-        <h2 class="post-subtitle">{{date published_at format='D MMMM YYYY'}} <span class="separator"> &middot; </span> {{reading_time}} <span class="taglist">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</h2>
+        <h2 class="post-subtitle">{{date published_at format='D MMMM YYYY'}} <span class="separator"> &middot; </span> {{reading_time}} <span class="tags taglist smallTag">{{tags separator=" " prefix=" &middot; "}}</span>{{#if featured}}<span class="separator"> &middot; </span><i class="fa fa-star-o feature-star"></i>{{/if}}</h2>
     </div>
 
     <div>
@@ -14,6 +14,11 @@
 
     <div>
 	   {{> share}} 
+    </div>
+
+    <div class="bottom-navigation">
+        <a href="/archives/">Archives</a>
+        <a href="/tags/">Tags</a>
     </div>
   	
   	<!-- {{#prev_post}}
