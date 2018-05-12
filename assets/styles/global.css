@@ -317,11 +317,11 @@ main {
 }
 
 ::selection {
-    background: var(--lightgrey);
+    background: var(--lightgrey) !important;
 }
 
 ::-moz-selection {
-    background: var(--lightgrey);
+    background: var(--lightgrey) !important;
 }
 
 hr {
