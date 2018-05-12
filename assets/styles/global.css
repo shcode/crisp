@@ -514,7 +514,7 @@ p {
 
 code {
     font-size: 0.8em;
-    color: var(--darkgrey);
+    color: var(--pink);
 }
 
 :not(pre) > code[class*="language-"],
