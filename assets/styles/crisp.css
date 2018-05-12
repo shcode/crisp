@@ -197,6 +197,13 @@ h1.page-title {
 	margin-top: 0.5rem;
 }
 
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 0 1rem 0;
+	font-size: 1.2em;
+}
+
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
