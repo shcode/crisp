@@ -7,7 +7,7 @@
     --grey: #808080;
     --lightgrey: #cccc;
     --whitegrey: #e5eff5;
-    --blue: #3eb0ef;
+    --blue: #52adc8;
     --green: #a4d037;
     --purple: #ad26b4;
     --yellow: #fecd35;
@@ -533,6 +533,8 @@ pre[class*="language-"] {
     border: 1px solid var(--lightgrey);
     padding: 0.2em;
     border-radius: 0.5em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
 }
 
 input {
