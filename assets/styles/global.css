@@ -514,7 +514,7 @@ p {
 
 code {
     font-size: 0.8em;
-    color: var(--pink);
+    background: #f9f9f9;    
 }
 
 :not(pre) > code[class*="language-"],
@@ -526,6 +526,12 @@ pre[class*="language-"] {
     white-space: pre-wrap !important;
     word-break: break-all;
     word-wrap: break-word;
+    border-radius: 0.5em;
+}
+
+:not(pre) > code {
+    border: 1px solid var(--lightgrey);
+    padding: 0.2em;
     border-radius: 0.5em;
 }
 
