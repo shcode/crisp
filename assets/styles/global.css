@@ -331,9 +331,6 @@ hr {
     margin-top: 0.9em;
     margin-bottom: 0.9em;
     padding: 0;
-    height: 1px;
-    border: 0;
-    color: var(--darkgrey);
 }
 
 header {
