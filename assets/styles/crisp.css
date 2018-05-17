@@ -273,6 +273,10 @@ article.post > .header {}
 	padding-bottom: 0.5rem;
 }
 
+.kg-card-markdown a {
+	color: var(--blue);
+}
+
 /* 7.2. Post Footer
 /* ---------------------------------------------------------- */
 
