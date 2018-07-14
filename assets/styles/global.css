@@ -292,7 +292,7 @@ html {
 }
 
 html, body {
-     overflow-x: hidden;
+    overflow-x: hidden;
     font-size: 1em;
     font-family: -apple-system, "Helvetica Neue", sans-serif;
     font-weight: 400;
@@ -533,7 +533,6 @@ pre[class*="language-"] {
     word-wrap: break-word;
     border-radius: 0.5em;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    font-size: 1.5vw;
 }
 
 :not(pre) > code {
@@ -547,4 +546,23 @@ pre[class*="language-"] {
 input {
     font-size: 1em;
     padding: 0.3em;
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1281px) {
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        font-size: 1.3em;
+    } 
+}
+/* Small Screens */
+@media only screen and (min-width: 800px) { 
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        font-size: 1.2em;
+    } 
+}
+/* Tiny Screens */
+@media only screen and (min-width: 320px) { 
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        font-size: 0.9em;
+    } 
 }
