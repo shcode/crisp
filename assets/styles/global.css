@@ -350,8 +350,7 @@ header {
 }
 
 footer {
-    padding-left:  var(--paddingContent);
-    padding-right: var(--paddingContent);
+    padding: 2em 2em 1em 2em;
 }
 
 audio,
@@ -555,13 +554,13 @@ input {
     } 
 }
 /* Small Screens */
-@media only screen and (min-width: 800px) { 
+@media only screen and (max-width: 800px) { 
     :not(pre) > code[class*="language-"], pre[class*="language-"] {
-        font-size: 1.2em;
+        font-size: 1.1em;
     } 
 }
 /* Tiny Screens */
-@media only screen and (min-width: 320px) { 
+@media only screen and (max-width: 320px) { 
     :not(pre) > code[class*="language-"], pre[class*="language-"] {
         font-size: 0.9em;
     } 
